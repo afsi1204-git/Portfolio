@@ -25,6 +25,7 @@ export default function Projects() {
           >
             <div className={`project-card__gradient ${project.gradient}`} />
             <span className="project-card__icon">{project.icon}</span>
+            <div className="project-card__meta">Featured Project</div>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             <div className="project-card__tech">

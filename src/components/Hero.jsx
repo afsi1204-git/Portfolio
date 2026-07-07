@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaEnvelope, FaPhone, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaPhone, FaGithub, FaDownload } from "react-icons/fa";
 import { personal } from "../data/portfolio";
 
 const roles = [
@@ -83,6 +83,24 @@ export default function Hero() {
         <motion.p className="hero__tagline" variants={item}>
           {personal.tagline}
         </motion.p>
+        <motion.p className="hero__summary" variants={item}>
+          Web developer with a strong interest in frontend experiences, accessible design, and turning ideas into polished products.
+        </motion.p>
+
+        <motion.div className="hero__highlights" variants={item}>
+          <div className="hero__highlight-card glass-card">
+            <strong>CGPA 8.29</strong>
+            <span>B.E. Computer Science</span>
+          </div>
+          <div className="hero__highlight-card glass-card">
+            <strong>3+ Projects</strong>
+            <span>Full-stack and frontend web apps</span>
+          </div>
+          <div className="hero__highlight-card glass-card">
+            <strong>Web + ML</strong>
+            <span>React, Python, Databases & UX</span>
+          </div>
+        </motion.div>
 
         <motion.div className="hero__stats" variants={item}>
           {stats.map((stat) => (
@@ -105,6 +123,15 @@ export default function Hero() {
             }}
           >
             View Projects
+          </motion.a>
+          <motion.a
+            href={personal.resume}
+            download
+            className="btn btn--ghost"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <FaDownload /> Resume
           </motion.a>
           <motion.a
             href={personal.github}
@@ -160,7 +187,6 @@ export default function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity }}
         >
-          Scroll
         </motion.span>
         <div className="hero__scroll-line" />
       </motion.div>

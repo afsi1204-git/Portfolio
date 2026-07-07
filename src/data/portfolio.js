@@ -1,14 +1,15 @@
 export const personal = {
   name: "Afsheen Fathima Akbar Ali",
   title: "Computer Science Engineer",
-  tagline: "Building thoughtful web experiences with clean code & curious design",
+  tagline: "Crafting thoughtful web experiences with React, clean UI, and a problem-solving mindset.",
   summary:
-    "Hardworking student offering part-time work experience and extensive knowledge of core subject matter. Meticulous and detail-oriented with excellent observational, organizational and communication skills.",
+    "Computer Science Engineering student with a strong foundation in web development, databases, and machine learning. Passionate about building polished user experiences and turning ideas into functional digital products.",
   location: "Erode, India 638001",
   email: "afsi1204@gmail.com",
   phone: "+91-9363212990",
   linkedin: "https://www.linkedin.com/in/afsheen1204",
   github: "https://github.com/afsi1204-git",
+  resume: "/resume.pdf",
 };
 
 export const skills = [
@@ -114,6 +115,15 @@ export const projects = [
     link: "https://page-replacement-algorithm.onrender.com",
     gradient: "from-violet-500/20 to-fuchsia-500/20",
     icon: "⚡",
+  },
+  {
+    title: "Acdemix",
+    description:
+      "Academic project focused on a collaborative learning platform with course content, assignment workflow, and progress tracking designed to improve student engagement and academic organization.",
+    tech: ["React", "JavaScript", "UI/UX", "Academic Project"],
+    link: "https://academi-99f47de7b-afsi1204-3608s-projects.vercel.app/",
+    gradient: "from-amber-500/20 to-orange-500/20",
+    icon: "🎓",
   },
   {
     title: "Climate Trends Model",

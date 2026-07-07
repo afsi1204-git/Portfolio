@@ -97,9 +97,32 @@ export default function About() {
           <p>{personal.summary}</p>
           <p className="about__extra">
             I&apos;m pursuing my B.E. in Computer Science at Kongu Engineering College with a strong
-            foundation in web development, databases, and machine learning. I enjoy turning ideas into
-            interactive applications — from OS simulators to climate data models.
+            foundation in web development, databases, and machine learning. My work focuses on building
+            responsive interfaces, collaborative development habits, and impactful digital solutions.
           </p>
+
+          <div className="about__resume-grid">
+            <div className="about__resume-card glass-card">
+              <h4>Academic</h4>
+              <p>CGPA 8.29 with strong fundamentals in programming, algorithms, and systems.</p>
+            </div>
+            <div className="about__resume-card glass-card">
+              <h4>Skills</h4>
+              <ul>
+                <li>React & JavaScript</li>
+                <li>HTML, CSS & UI design</li>
+                <li>Python, SQL & MongoDB</li>
+              </ul>
+            </div>
+            <div className="about__resume-card glass-card">
+              <h4>Interests</h4>
+              <ul>
+                <li>Human-computer interaction</li>
+                <li>Machine learning</li>
+                <li>Clean, accessible products</li>
+              </ul>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
