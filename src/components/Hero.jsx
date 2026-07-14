@@ -183,12 +183,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
       >
-        <motion.span
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity }}
-        >
-        </motion.span>
-        <div className="hero__scroll-line" />
+        
       </motion.div>
     </section>
   );

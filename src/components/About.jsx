@@ -1,19 +1,10 @@
 import { motion } from "framer-motion";
 import {
   FaGraduationCap,
-  FaCode,
-  FaPalette,
-  FaDatabase,
-  FaBrain,
-  FaGithub,
-  FaLaptopCode,
 } from "react-icons/fa";
 import {
   personal,
-  skills,
   education,
-  coursesAndCerts,
-  expertise,
 } from "../data/portfolio";
 import SectionHeading from "./SectionHeading";
 
@@ -24,58 +15,6 @@ const highlights = [
   { label: "LinkedIn", value: "afsheen1204", href: personal.linkedin },
   { label: "GitHub", value: "afsi1204-git", href: personal.github },
 ];
-
-const expertiseIcons = {
-  web: FaLaptopCode,
-  design: FaPalette,
-  code: FaCode,
-  database: FaDatabase,
-  ml: FaBrain,
-  git: FaGithub,
-};
-
-function SkillBar({ name, level }) {
-  return (
-    <div className="skill-bar">
-      <div className="skill-bar__header">
-        <span>{name}</span>
-        <span>{level}%</span>
-      </div>
-      <div className="skill-bar__track">
-        <motion.div
-          className="skill-bar__fill"
-          initial={{ width: 0 }}
-          whileInView={{ width: `${level}%` }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function ExpertiseCard({ item, index }) {
-  const Icon = expertiseIcons[item.icon] || FaCode;
-
-  return (
-    <motion.article
-      className="expertise-card glass-card"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      whileHover={{ y: -8, boxShadow: "0 20px 48px rgba(52, 211, 153, 0.12)" }}
-    >
-      <div className={`expertise-card__icon expertise-card__icon--${item.icon}`}>
-        <span className="expertise-card__icon-inner">
-          <Icon />
-        </span>
-      </div>
-      <h3>{item.title}</h3>
-      <p>{item.description}</p>
-    </motion.article>
-  );
-}
 
 export default function About() {
   return (
@@ -193,59 +132,7 @@ export default function About() {
         </motion.div>
       </div>
 
-      {/* Skills + courses (former certifications) */}
-      <div className="about__block">
-        <h3 className="about__block-title">Skills & Courses</h3>
-        <div className="skills__grid about__skills-grid">
-          {skills.map((group, gi) => (
-            <motion.div
-              key={group.category}
-              className="glass-card skills__card"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: gi * 0.1 }}
-              whileHover={{ y: -6 }}
-            >
-              <h4 className="skills__category">{group.category}</h4>
-              {group.items.map((skill) => (
-                <SkillBar key={skill.name} name={skill.name} level={skill.level} />
-              ))}
-            </motion.div>
-          ))}
-        </div>
 
-        <motion.div
-          className="about__courses"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="about__courses-label">Courses & certifications</p>
-          <div className="about__courses-tags">
-            {coursesAndCerts.map((course) => (
-              <span key={course} className="about__course-tag">
-                {course}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Expertise */}
-      <div id="expertise" className="about__block about__expertise-section">
-        <SectionHeading
-          label="02 — Expertise"
-          title="My Expertise"
-          subtitle="Areas I focus on and continue to grow in"
-        />
-        <div className="expertise__grid">
-          {expertise.map((item, i) => (
-            <ExpertiseCard key={item.title} item={item} index={i} />
-          ))}
-        </div>
-      </div>
     </section>
   );
 }

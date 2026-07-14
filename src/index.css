@@ -146,12 +146,13 @@ img {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 20px 50px rgba(2, 8, 23, 0.32);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(52, 211, 153, 0.25);
-  box-shadow: 0 28px 70px rgba(34, 211, 238, 0.12);
+  background: rgba(12, 20, 36, 0.6);
+  border-color: rgba(52, 211, 153, 0.4);
+  box-shadow: 0 28px 80px rgba(52, 211, 153, 0.25), 0 0 40px rgba(34, 211, 238, 0.15);
 }
 
 /* Buttons */
@@ -1239,5 +1240,105 @@ img {
     position: static;
     transform: none;
     margin-top: 24px;
+  }
+}
+
+/* Tech Stack */
+.tech-stack {
+  padding: 118px 28px;
+}
+
+.tech-stack__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-stack__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tech-stack__item:hover {
+  transform: scale(1.1);
+}
+
+.tech-stack__icon-wrapper {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tech-stack__item:hover .tech-stack__icon-wrapper {
+  background: rgba(52, 211, 153, 0.15);
+  border-color: rgba(52, 211, 153, 0.3);
+  box-shadow: 0 8px 24px rgba(52, 211, 153, 0.2);
+}
+
+.tech-stack__icon {
+  font-size: 2.2rem;
+  transition: all 0.3s ease;
+}
+
+.tech-stack__item:hover .tech-stack__icon {
+  transform: scale(1.15);
+}
+
+.tech-stack__name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.tech-stack__item:hover .tech-stack__name {
+  color: var(--text);
+}
+
+@media (max-width: 1024px) {
+  .tech-stack__grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tech-stack {
+    padding: 72px 18px;
+  }
+
+  .tech-stack__grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 16px;
+  }
+
+  .tech-stack__icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tech-stack__icon {
+    font-size: 1.8rem;
+  }
+
+  .tech-stack__name {
+    font-size: 0.75rem;
   }
 }

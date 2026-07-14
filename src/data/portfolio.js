@@ -139,7 +139,7 @@ export const projects = [
 export const navLinks = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "expertise", label: "Expertise" },
   { id: "projects", label: "Projects" },
+  { id: "tech-stack", label: "Tech Stack" },
   { id: "contact", label: "Contact" },
 ];
